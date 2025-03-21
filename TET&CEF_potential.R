@@ -1,4 +1,4 @@
-d1 <- read.csv("TET_Electric_potential.csv")
+d1 <- read.csv("TET_potential.csv")
 head(d1)
 
 library(RColorBrewer)
@@ -26,10 +26,11 @@ ggplot(d1, aes(x=Time, y=Mean, color=Surfactant))+
   theme(legend.text = element_text(size=16, face = "bold"))+
   theme(panel.border = element_rect(fill=NA,color="black", size=2, linetype="solid"))
 
-ggsave("TET_Electric_potential.png", width=600/90, height=390/90, dpi=600, unit="in")
+ggsave("TET_potential.png", width=600/90, height=390/90, dpi=600, unit="in")
 
 
-d2 <-  read.csv("CEF_Electric_potential.csv")
+
+d2 <-  read.csv("CEF_potential.csv")
 head(d2)
 
 ggplot(d2, aes(x=Time, y=Mean, color=Surfactant))+
@@ -53,4 +54,4 @@ ggplot(d2, aes(x=Time, y=Mean, color=Surfactant))+
   theme(legend.text = element_text(size=16, face = "bold"))+
   theme(panel.border = element_rect(fill=NA,color="black", size=2, linetype="solid"))
 
-ggsave("CEF_Electric_potential.png", width=600/90, height=390/90, dpi=600, unit="in")
+ggsave("CEF_potential.png", width=600/90, height=390/90, dpi=600, unit="in")

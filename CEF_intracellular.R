@@ -1,36 +1,32 @@
-d_SDS <- read.csv("E. coli_CEF+SDS.csv")
+d_SDS <- read.csv("CEF+SDS.csv")
 head(d_SDS)
 d_SDS$Group <- factor(d_SDS$Group, level=c("Ctrl", "0.02", "0.04", "0.2", "1", "5", "10"))
 
-residuals <- (aov(Extracellular ~ Group, data=d_SDS))$residuals
-shapiro.test(residuals)  #正态分布检验#
-bartlett.test(Extracellular ~ Group, data=d_SDS)  #方差齐性检验#
-aov.1 <- aov(Extracellular ~ Group, data=d_SDS)
+residuals <- (aov(Intracellular ~ Group, data=d_SDS))$residuals
+shapiro.test(residuals)
+bartlett.test(Intracellular ~ Group, data=d_SDS)
+aov.1 <- aov(Intracellular ~ Group, data=d_SDS)
 summary(aov.1)
 TukeyHSD(aov.1)
 
 library(multcompView)
 library(dplyr)
-df_p1 <- (TukeyHSD(aov.1)$Group)[,4]
-let1 <- multcompLetters(df_p1, compare="<", threshold=0.05, Letters=letters, reversed = F)
-let1
-
-
 library(ggplot2)
 library(RColorBrewer)
 library(ggpubr)
-ggplot(d_SDS, aes(Group, Extracellular, color=Group))+
+
+ggplot(d_SDS, aes(Group, Intracellular, color=Group))+
   geom_point(stat="summary", fun="mean", alpha=1.0, size=9)+
   geom_errorbar(stat="summary",
                 fun.min=function(x) mean(x)-sd(x),
                 fun.max=function(x) mean(x)+sd(x),
                 width=0, size=3.25)+
   theme_bw()+
-  scale_y_continuous(limits = c(0, 6.5))+
+  scale_y_continuous(limits = c(5*10^-11, 5*10^-10))+
   labs(x=NULL,
-       y=expression("Extracellular CEF (ng"~mL^"-1"*")"),
+       y=expression("Intracellular CEF (ng"~cell^"-1"*")"),
        title=expression("CEF+SDS"))+
-  theme(axis.text.x=element_text(size = 18, face = "bold", vjust = 0.4, angle = 20))+
+  theme(axis.text.x=element_text(size = 18, face = "bold", vjust = 0.4, angle = 0))+
   theme(axis.text.y = element_text(size = 18, face = "bold"))+
   theme(axis.title.y = element_text(size=20, face = "bold", vjust = 2.5))+
   scale_fill_brewer(palette = "OrRd")+
@@ -39,38 +35,33 @@ ggplot(d_SDS, aes(Group, Extracellular, color=Group))+
   theme(title = element_text(size = 18, face = "bold"))+
   theme(panel.border = element_rect(fill=NA,color="black", size=2, linetype="solid"))
   
-ggsave("E.coli_CEF+SDS_ex.png", width=690/90, height=420/90, dpi=600, unit="in")
+ggsave("CEF+SDS_in.png", width=690/90, height=420/90, dpi=600, unit="in")
 
   
 
-
-d_DTAC <- read.csv("E. coli_CEF+DTAC.csv")
+d_DTAC <- read.csv("CEF+DTAC.csv")
 head(d_DTAC)
 d_DTAC$Group <- factor(d_DTAC$Group, level=c("Ctrl", "0.02", "0.04", "0.2", "1", "5", "10"))
 
-residuals <- (aov(Extracellular ~ Group, data=d_DTAC))$residuals
-shapiro.test(residuals)  #正态分布检验#
-bartlett.test(Extracellular ~ Group, data=d_DTAC)  #方差齐性检验#
-aov.2 <- aov(Extracellular ~ Group, data=d_DTAC)
+residuals <- (aov(Intracellular ~ Group, data=d_DTAC))$residuals
+shapiro.test(residuals)
+bartlett.test(Intracellular ~ Group, data=d_DTAC)
+aov.2 <- aov(Intracellular ~ Group, data=d_DTAC)
 summary(aov.2)
 TukeyHSD(aov.2)
 
-df_p2 <- (TukeyHSD(aov.2)$Group)[,4]
-let2 <- multcompLetters(df_p2, compare="<", threshold=0.05, Letters=letters, reversed = F)
-let2
-
-ggplot(d_DTAC, aes(Group, Extracellular, color=Group))+
+ggplot(d_DTAC, aes(Group, Intracellular, color=Group))+
   geom_point(stat="summary", fun="mean", alpha=1.0, size=9)+
   geom_errorbar(stat="summary",
                 fun.min=function(x) mean(x)-sd(x),
                 fun.max=function(x) mean(x)+sd(x),
                 width=0, size=3.25)+
   theme_bw()+
-  scale_y_continuous(limits = c(95, 265))+
+  scale_y_continuous(limits = c(1.5*10^-10, 6*10^-10))+
   labs(x=NULL,
-       y=expression("Extracellular CEF (ng"~mL^"-1"*")"),
+       y=expression("Intracellular CEF (ng"~cell^"-1"*")"),
        title=expression("CEF+DTAC"))+
-  theme(axis.text.x=element_text(size = 18, face = "bold", vjust = 0.4, angle = 20))+
+  theme(axis.text.x=element_text(size = 18, face = "bold", vjust = 0.4, angle = 0))+
   theme(axis.text.y = element_text(size = 18, face = "bold"))+
   theme(axis.title.y = element_text(size=20, face = "bold", vjust = 2.5))+
   scale_fill_brewer(palette = "Blues")+
@@ -79,39 +70,33 @@ ggplot(d_DTAC, aes(Group, Extracellular, color=Group))+
   theme(title = element_text(size = 18, face = "bold"))+
   theme(panel.border = element_rect(fill=NA,color="black", size=2, linetype="solid"))
 
-ggsave("E.coli_CEF+DTAC_ex.png", width=690/90, height=420/90, dpi=600, unit="in")
+ggsave("CEF+DTAC_in.png", width=690/90, height=420/90, dpi=600, unit="in")
 
 
 
-
-
-d_TX <- read.csv("E. coli_CEF+TX-100.csv")
+d_TX <- read.csv("CEF+TX-100.csv")
 head(d_TX)
 d_TX$Group <- factor(d_TX$Group, level=c("Ctrl", "0.02", "0.04", "0.2", "1", "5", "10"))
 
-residuals <- (aov(Extracellular ~ Group, data=d_TX))$residuals
-shapiro.test(residuals)  #正态分布检验#
-bartlett.test(Extracellular ~ Group, data=d_TX)  #方差齐性检验#
-aov.3 <- aov(Extracellular ~ Group, data=d_TX)
+residuals <- (aov(Intracellular ~ Group, data=d_TX))$residuals
+shapiro.test(residuals)
+bartlett.test(Intracellular ~ Group, data=d_TX)
+aov.3 <- aov(Intracellular ~ Group, data=d_TX)
 summary(aov.3)
 TukeyHSD(aov.3)
 
-df_p3 <- (TukeyHSD(aov.3)$Group)[,4]
-let3 <- multcompLetters(df_p3, compare="<", threshold=0.05, Letters=letters, reversed = F)
-let3
-
-ggplot(d_TX, aes(Group, Extracellular, color=Group))+
+ggplot(d_TX, aes(Group, Intracellular, color=Group))+
   geom_point(stat="summary", fun="mean", alpha=1.0, size=9)+
   geom_errorbar(stat="summary",
                 fun.min=function(x) mean(x)-sd(x),
                 fun.max=function(x) mean(x)+sd(x),
                 width=0, size=3.25)+
   theme_bw()+
-  scale_y_continuous(limits = c(0, 65))+
+  scale_y_continuous(limits = c(5*10^-11, 5*10^-10))+
   labs(x=NULL,
-       y=expression("Extracellular CEF (ng"~mL^"-1"*")"),
+       y=expression("Intracellular CEF (ng"~cell^"-1"*")"),
        title=expression("CEF+TX-100"))+
-  theme(axis.text.x=element_text(size = 18, face = "bold", vjust = 0.4, angle = 20))+
+  theme(axis.text.x=element_text(size = 18, face = "bold", vjust = 0.4, angle = 0))+
   theme(axis.text.y = element_text(size = 18, face = "bold"))+
   theme(axis.title.y = element_text(size=20, face = "bold", vjust = 2.5))+
   scale_fill_brewer(palette = "Purples")+
@@ -120,5 +105,5 @@ ggplot(d_TX, aes(Group, Extracellular, color=Group))+
   theme(title = element_text(size = 18, face = "bold"))+
   theme(panel.border = element_rect(fill=NA,color="black", size=2, linetype="solid"))
 
-ggsave("E.coli_CEF+TX-100_ex.png", width=690/90, height=420/90, dpi=600, unit="in")
+ggsave("CEF+TX-100_in.png", width=690/90, height=420/90, dpi=600, unit="in")
 
