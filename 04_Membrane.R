@@ -29,7 +29,7 @@ ggplot(d_CEF, aes(Surfactant, Membrane.permeability, fill= Surfactant))+
   labs(x=NULL,
        y=expression("Fold change of permeability"),
        title=expression("CEF"))+
-  scale_fill_manual(values = c("Ctrl"="#B3D9CE", "DTAC"="#203f99", "SDS"="#C31419", "TX-100"="#824CA2"))+
+  scale_fill_manual(values = c("Ctrl"="#B3D9CE", "DTAC"="#C24E44", "SDS"="#2A5196", "TX-100"="#7367BE"))+
   theme(axis.text.x=element_text(size = 18, face = "bold", vjust = 0))+
   theme(axis.text.y = element_text(size = 18, face = "bold"))+
   theme(axis.title.y = element_text(size=20, face = "bold", vjust = 2))+
@@ -62,7 +62,7 @@ ggplot(d_CEF, aes(Surfactant, Membrane.hydrophobicity, fill= Surfactant))+
   labs(x=NULL,
        y=expression("Fold change of hydrophobicity"),
        title=expression("CEF"))+
-  scale_fill_manual(values = c("Ctrl"="#B3D9CE", "DTAC"="#203f99", "SDS"="#C31419", "TX-100"="#824CA2"))+
+  scale_fill_manual(values = c("Ctrl"="#B3D9CE", "DTAC"="#C24E44", "SDS"="#2A5196", "TX-100"="#7367BE"))+
   theme(axis.text.x=element_text(size = 18, face = "bold", vjust = 0))+
   theme(axis.text.y = element_text(size = 18, face = "bold"))+
   theme(axis.title.y = element_text(size=20, face = "bold", vjust = 2))+
@@ -98,7 +98,7 @@ ggplot(d_TET, aes(Surfactant, Membrane.permeability, fill= Surfactant))+
   labs(x=NULL,
        y=expression("Fold change of permeability"),
        title=expression("TET"))+
-  scale_fill_manual(values = c("Ctrl"="#B3D9CE", "DTAC"="#203f99", "SDS"="#C31419", "TX-100"="#824CA2"))+
+  scale_fill_manual(values = c("Ctrl"="#B3D9CE", "DTAC"="#C24E44", "SDS"="#2A5196", "TX-100"="#7367BE"))+
   theme(axis.text.x=element_text(size = 18, face = "bold", vjust = 0))+
   theme(axis.text.y = element_text(size = 18, face = "bold"))+
   theme(axis.title.y = element_text(size=20, face = "bold", vjust = 2))+
@@ -131,7 +131,7 @@ ggplot(d_TET, aes(Surfactant, Membrane.hydrophobicity, fill= Surfactant))+
   labs(x=NULL,
        y=expression("Fold change of hydrophobicity"),
        title=expression("TET"))+
-  scale_fill_manual(values = c("Ctrl"="#B3D9CE", "DTAC"="#203f99", "SDS"="#C31419", "TX-100"="#824CA2"))+
+  scale_fill_manual(values = c("Ctrl"="#B3D9CE", "DTAC"="#C24E44", "SDS"="#2A5196", "TX-100"="#7367BE"))+
   theme(axis.text.x=element_text(size = 18, face = "bold", vjust = 0))+
   theme(axis.text.y = element_text(size = 18, face = "bold"))+
   theme(axis.title.y = element_text(size=20, face = "bold", vjust = 2))+

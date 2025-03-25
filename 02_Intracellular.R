@@ -28,9 +28,9 @@ ggplot(d_CEF_DTAC, aes(Group, Intracellular, color=Group))+
        title=expression("CEF+DTAC"))+
   theme(axis.text.x=element_text(size = 18, face = "bold", vjust = 0.4, angle = 0))+
   theme(axis.text.y = element_text(size = 18, face = "bold"))+
-  theme(axis.title.y = element_text(size=20, face = "bold", vjust = 2.5))+
-  scale_fill_brewer(palette = "Blues")+
-  scale_color_brewer(palette = "Blues")+
+  theme(axis.title.y = element_text(size=30, face = "bold", vjust = 2))+
+  scale_fill_brewer(palette = "OrRd")+
+  scale_color_brewer(palette = "OrRd")+
   theme(legend.position = "none")+
   theme(title = element_text(size = 18, face = "bold"))+
   theme(panel.border = element_rect(fill=NA,color="black", size=2, linetype="solid"))
@@ -63,9 +63,9 @@ ggplot(d_CEF_SDS, aes(Group, Intracellular, color=Group))+
        title=expression("CEF+SDS"))+
   theme(axis.text.x=element_text(size = 18, face = "bold", vjust = 0.4, angle = 0))+
   theme(axis.text.y = element_text(size = 18, face = "bold"))+
-  theme(axis.title.y = element_text(size=20, face = "bold", vjust = 2.5))+
-  scale_fill_brewer(palette = "OrRd")+
-  scale_color_brewer(palette = "OrRd")+
+  theme(axis.title.y = element_text(size=30, face = "bold", vjust = 2))+
+  scale_fill_brewer(palette = "Blues")+
+  scale_color_brewer(palette = "Blues")+
   theme(legend.position = "none")+
   theme(title = element_text(size = 18, face = "bold"))+
   theme(panel.border = element_rect(fill=NA,color="black", size=2, linetype="solid"))
@@ -98,7 +98,7 @@ ggplot(d_CEF_TX, aes(Group, Intracellular, color=Group))+
        title=expression("CEF+TX-100"))+
   theme(axis.text.x=element_text(size = 18, face = "bold", vjust = 0.4, angle = 0))+
   theme(axis.text.y = element_text(size = 18, face = "bold"))+
-  theme(axis.title.y = element_text(size=20, face = "bold", vjust = 2.5))+
+  theme(axis.title.y = element_text(size=30, face = "bold", vjust = 2))+
   scale_fill_brewer(palette = "Purples")+
   scale_color_brewer(palette = "Purples")+
   theme(legend.position = "none")+
@@ -133,9 +133,9 @@ ggplot(d_TET_DTAC, aes(Group, Intracellular, color=Group))+
        title=expression("TET+DTAC"))+
   theme(axis.text.x=element_text(size = 18, face = "bold", vjust = 0.4, angle = 0))+
   theme(axis.text.y = element_text(size = 18, face = "bold"))+
-  theme(axis.title.y = element_text(size=20, face = "bold", vjust = 2.5))+
-  scale_fill_brewer(palette = "Blues")+
-  scale_color_brewer(palette = "Blues")+
+  theme(axis.title.y = element_text(size=30, face = "bold", vjust = 2))+
+  scale_fill_brewer(palette = "OrRd")+
+  scale_color_brewer(palette = "OrRd")+
   theme(legend.position = "none")+
   theme(title = element_text(size = 18, face = "bold"))+
   theme(panel.border = element_rect(fill=NA,color="black", size=2, linetype="solid"))
@@ -168,9 +168,9 @@ ggplot(d_TET_SDS, aes(Group, Intracellular, color=Group))+
        title=expression("TET+SDS"))+
   theme(axis.text.x=element_text(size = 18, face = "bold", vjust = 0.4, angle = 0))+
   theme(axis.text.y = element_text(size = 18, face = "bold"))+
-  theme(axis.title.y = element_text(size=20, face = "bold", vjust = 2.5))+
-  scale_fill_brewer(palette = "OrRd")+
-  scale_color_brewer(palette = "OrRd")+
+  theme(axis.title.y = element_text(size=30, face = "bold", vjust = 2))+
+  scale_fill_brewer(palette = "Blues")+
+  scale_color_brewer(palette = "Blues")+
   theme(legend.position = "none")+
   theme(title = element_text(size = 18, face = "bold"))+
   theme(panel.border = element_rect(fill=NA,color="black", size=2, linetype="solid"))
@@ -203,7 +203,7 @@ ggplot(d_TET_TX, aes(Group, Intracellular, color=Group))+
        title=expression("TET+TX-100"))+
   theme(axis.text.x=element_text(size = 18, face = "bold", vjust = 0.4, angle = 0))+
   theme(axis.text.y = element_text(size = 18, face = "bold"))+
-  theme(axis.title.y = element_text(size=20, face = "bold", vjust = 2.5))+
+  theme(axis.title.y = element_text(size=30, face = "bold", vjust = 2))+
   scale_fill_brewer(palette = "Purples")+
   scale_color_brewer(palette = "Purples")+
   theme(legend.position = "none")+

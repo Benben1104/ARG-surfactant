@@ -16,7 +16,7 @@ ggplot(d1, aes(x=Time, y=Mean, color=Surfactant))+
        y=expression("Fold change of potential"),
        title = expression("CEF"),
        color=NULL)+
-  scale_color_manual(values = c("Ctrl"="#B3D9CE", "DTAC"="#203f99", "SDS"="#C31419", "TX-100"="#824CA2"),
+  scale_color_manual(values = c("Ctrl"="#B3D9CE", "DTAC"="#C24E44", "SDS"="#2A5196", "TX-100"="#7367BE"),
                      breaks = c("Ctrl", "DTAC", "SDS", "TX-100"))+
   theme(axis.text.x=element_text(size = 18, face = "bold", vjust = 0))+
   theme(axis.text.y = element_text(size = 18, face = "bold"))+
@@ -44,7 +44,7 @@ ggplot(d2, aes(x=Time, y=Mean, color=Surfactant))+
        y=expression("Fold change of potential"),
        title = expression("TET"),
        color=NULL)+
-  scale_color_manual(values = c("Ctrl"="#B3D9CE", "DTAC"="#203f99", "SDS"="#C31419", "TX-100"="#824CA2"),
+  scale_color_manual(values = c("Ctrl"="#B3D9CE", "DTAC"="#C24E44", "SDS"="#2A5196", "TX-100"="#7367BE"),
                      breaks = c("Ctrl", "DTAC", "SDS", "TX-100"))+
   theme(axis.text.x=element_text(size = 18, face = "bold", vjust = 0))+
   theme(axis.text.y = element_text(size = 18, face = "bold"))+
